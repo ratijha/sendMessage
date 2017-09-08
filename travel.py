@@ -2,6 +2,7 @@ __author__ = 'ratijha'
 
 import requests
 import json
+import logging
 
 API_KEY='3a2826056fffa622e4f20bfec321b474'
 app_id = '279882b0'
@@ -13,6 +14,7 @@ def travel(source, destination, date):
       # print(url)
       # url = "https://www.redbus.in/search?fromCityName={0}&toCityName={1}&onward={2}&opId=0&busType=Any#".format(source, destination, date)
       dat = requests.get(url).json()
+      logging.debug(dat)
       # print(dat)
       # return dat
       res = []
