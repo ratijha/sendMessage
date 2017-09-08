@@ -1,10 +1,14 @@
 from twilio.rest import Client
 import datetime as dt
 import travel
+import os
 from threading import Timer
 import argparse
 import logging
-client = Client("AC745bb9c9f6444958ff9e74721b13ab4c", "8a913b650533fe7e151e8a132d206fb0")
+TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+
 # client.messages.create(to="+919902187842", from_="+12052674717",body="python")
 logfiletouse = 'log.txt'
 logging.basicConfig(filename=logfiletouse, level=logging.DEBUG,
